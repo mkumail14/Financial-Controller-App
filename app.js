@@ -31,7 +31,7 @@ function submitModal(){
         localStorage.setItem('firstTime','false')
         localStorage.setItem('pin',setPin)
         modal.style.display = "none";
-        
+
     
     }
 
@@ -44,4 +44,24 @@ document.getElementById('pinDiv').style.display='block';
     
     }
 }
+function dateCal(){
+month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+var zone="am";
+todayDate=new Date;
+document.getElementById('date').innerText=` ${todayDate.getDate()}-${month[todayDate.getMonth()]}-${todayDate.getFullYear()}`;
+var hour=todayDate.getHours();
+if(hour>12){
+    var zone="pm";
+    hour-=12;
+}
+var dateNow=`${hour} : ${todayDate.getMinutes()} : ${todayDate.getSeconds()}`
+document.getElementById('time').innerText=dateNow;
+document.getElementById('zone').innerText=zone;
+}
 
+
+
+setInterval(function(){
+    dateCal();
+
+},1000)
