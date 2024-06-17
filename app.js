@@ -10,13 +10,14 @@ if(localStorage.getItem('firstTime')=='true'){
 }
 
 function submitModal(){
-
+var ready=true;
     var savingsAmountSet=document.getElementById('savingsAmountSet').value.trim()
     var monthlyAmountSet=document.getElementById('monthlyAmountSet').value.trim()
     if(savingsAmountSet=='' || monthlyAmountSet==''){
         document.getElementById('modalErr').innerText="Please fill all the fields."
     }else{
         if(document.getElementById('boolPin').checked){
+            ready=false;
             var setPin=document.getElementById('setPin').value.trim()
             if(setPin==''){
                 document.getElementById('modalErr').innerText="Please set Pin."
@@ -24,14 +25,21 @@ function submitModal(){
             }else if(setPin.length>4 || setPin.length<4){
                 document.getElementById('modalErr').innerText="Pin should be of 4 digit only."
 
+            }else{
+            localStorage.setItem('pin',setPin)
+            ready=true;
             }
+   
         }
+
+        if(ready==true){
         localStorage.setItem('savingAccount',savingsAmountSet);
         localStorage.setItem('monthlyAccount',monthlyAmountSet);
         localStorage.setItem('firstTime','false')
-        localStorage.setItem('pin',setPin)
         modal.style.display = "none";
-
+        document.getElementById('content').style.display='block'
+        }
+    
     
     }
 
@@ -60,7 +68,34 @@ document.getElementById('zone').innerText=zone;
 }
 
 
+function shownButton(){
+    document.getElementById('hiddenBox').style.display='block';
 
+}
+
+function logout(){
+    localStorage.setItem('status','false');
+    window.location.href = "index.html";
+    alert('Logged Out')
+
+}
+
+
+function openMonthlyAcc(){
+    window.location.href = "monthlyAccount.html";
+}
+
+function openSavingAcc(){
+    window.location.href = "savingAccount.html";
+}
+
+
+if(document.getElementById('myModal').style.display=='block'){
+    document.getElementById('content').style.display='none'
+}
+
+
+    
 setInterval(function(){
     dateCal();
 
