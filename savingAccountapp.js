@@ -146,7 +146,11 @@ function updateTransactionDetails(type, reason, amount) {
 
 }
 
+function takemeBack(){
+    localStorage.setItem('status2','false');
+    window.location.href = "main.html";
 
+}
 
 
 function logout(){
