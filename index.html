@@ -76,6 +76,8 @@
             localStorage.setItem('userName', createUserName.toLowerCase());
             localStorage.setItem('userPassword', createPassword);
             localStorage.setItem('status', 'false');
+            localStorage.setItem('firstTime', 'true');
+
 
             if (localStorage.getItem('userName') && localStorage.getItem('userPassword') && localStorage.getItem('Name')) {
                 alert("Congrats, Account Created");
@@ -86,12 +88,12 @@
                 var inputPassword = document.getElementById('password').value;
                 if (inputUsername.trim() === '' || inputPassword.trim() === '') {
                     document.getElementById('err').innerText = "Please fill in all fields";
-                } else {
+                }else {
                     if (localStorage.getItem('userName') === inputUsername && localStorage.getItem('userPassword') === inputPassword) {
                         localStorage.setItem('status', 'true');
                         alert(localStorage.getItem('Name') + ", Login Successful");
                         window.location.href = "main.html";
-                    } else {
+                    }else {
                         document.getElementById('err').innerText = "Username or Password is Wrong!";
                     }
                 }

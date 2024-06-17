@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Controler</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+   
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  
+  <div class="modal-content">
+    
+    <h2>Set Initial Account Details.</h2>
+    <p>As it's your first time you,you can add your initial amounts.you may enter 0(zero).If there is none. </p>
+    <label>Enter current Amount in Monthly Account</label>
+    <div class="form__group field">
+        <input type="number" id="monthlyAmountSet" class="form__field" placeholder="Monthly Account Amount" >
+        <label for="name" class="form__label">Monthly Account </label>
+    </div>
+    <br>
+    <label>Enter current Amount in Saving Account</label>
+    <div class="form__group field">
+        <input type="number" id="savingsAmountSet" class="form__field" placeholder="Savings Account Amount" >
+        <label for="name"  class="form__label">Savings Account </label>
+    </div>
+    <br>
+    
+    <label>Do you want to set a pin for Saving Account?</label>
+    <input type="checkbox"  id="boolPin" onclick="check()">
+    <div id="pinDiv" class="form__group field" style="display: none;">
+        <input type="number" id="setPin" class="form__field" placeholder="Savings Account Amount" >
+        <label for="name"  class="form__label">set 4 digit pin </label>
+    </div>
+    <br>
+    <p style="color: tomato;" id="modalErr"></p>
+    <button onclick="submitModal()" class="modalButton"> Submit</button>
+  </div>
+</div>
     <script src="app.js"></script>
 </body>
 </html>
