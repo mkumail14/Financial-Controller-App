@@ -1,0 +1,418 @@
+body{
+    background-color: rgb(37, 31, 37);
+    padding-bottom: 50px;
+  
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 30px; 
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    margin: auto;
+    padding: 20px;
+    width:80%;
+    color: white;  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .form {
+      width: 390px;
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      transition: .4s ease-in-out;
+    }
+    
+    .form:hover {
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+      scale: 0.99;
+    }
+    
+    .heading {
+      position: relative;
+      text-align: center;
+      color: black;
+      top: 3em;
+      font-weight: bold;
+    }
+    
+    .check {
+      position: relative;
+      align-self: center;
+      top: 4em;
+    }
+    
+    .input {
+      position: relative;
+      width: 2.5em;
+      height: 2.5em;
+      margin: 1em;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background-color: rgb(235, 235, 235);
+      box-shadow: inset 3px 3px 6px #d1d1d1,
+                inset -3px -3px 6px #ffffff;
+      top: 6.5em;
+      left: 1.5em;
+      padding-left: 15px;
+      transition: .4s ease-in-out;
+    }
+    
+    .input:hover {
+      box-shadow: inset 0px 0px 0px #d1d1d1,
+                inset 0px 0px 0px #ffffff;
+      background-color: lightgrey;
+    }
+    
+    .input:focus {
+      box-shadow: inset 0px 0px 0px #d1d1d1,
+                inset 0px 0px 0px #ffffff;
+      background-color: lightgrey;
+    }
+    
+    .btn1 {
+      position: relative;
+      top: 8.5em;
+      left: 2.4em;
+      width: 17em;
+      height: 3em;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      transition: .4s ease-in-out;
+      box-shadow: 1px 1px 3px #b5b5b5,
+                 -1px -1px 3px #ffffff;
+    }
+    
+    .btn1:active {
+      box-shadow: inset 3px 3px 6px #b5b5b5,
+                inset -3px -3px 6px #ffffff;
+    }
+    
+    .btn2 {
+      position: relative;
+      top: 9.5em;
+      left: 2.4em;
+      width: 17em;
+      height: 3em;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      transition: .4s ease-in-out;
+      box-shadow: 1px 1px 3px #b5b5b5,
+                 -1px -1px 3px #ffffff;
+    }
+    
+    .btn2:active {
+      box-shadow: inset 3px 3px 6px #b5b5b5,
+                inset -3px -3px 6px #ffffff;
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    .card {
+      width: 195px;
+      height: 285px;
+      background: #313131;
+      border-radius: 20px;
+      ;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: 0.2s ease-in-out;
+    }
+    
+    .img {
+      height: 30%;
+      position: absolute;
+      transition: 0.2s ease-in-out;
+      z-index: 1;
+    }
+    
+    .textBox {
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      transition: 0.2s ease-in-out;
+      z-index: 2;
+    }
+    
+    .textBox > .text {
+      font-weight: bold;
+    }
+    
+    .textBox > .head {
+      font-size: 20px;
+    }
+    
+    .textBox > .price {
+      font-size: 17px;
+    }
+    
+    .textBox > span {
+      font-size: 12px;
+      color: lightgrey;
+    }
+    
+    .card:hover > .textBox {
+      opacity: 1;
+    }
+    
+    .card:hover > .img {
+      height: 65%;
+      filter: blur(7px);
+      animation: anim 3s infinite;
+    }
+    
+    @keyframes anim {
+      0% {
+        transform: translateY(0);
+      }
+    
+      50% {
+        transform: translateY(-20px);
+      }
+    
+      100% {
+        transform: translateY(0);
+      }
+    }
+    
+    .card:hover {
+      transform: scale(1.04) rotate(-1deg);
+    }
+    
+    
+  
+    /* toggle button */
+  
+  
+    .checkbox-con {
+      margin: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+  
+     }
+     
+     .checkbox-con input[type="checkbox"] {
+      appearance: none;
+      width: 48px;
+      height: 27px;
+      border: 2px solid #ff0000;
+      border-radius: 20px;
+      background: #f1e1e1;
+      position: relative;
+      box-sizing: border-box;
+     }
+     
+     .checkbox-con input[type="checkbox"]::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      background: rgba(234, 7, 7, 0.5);
+      border: 2px solid #ea0707;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(13%, 15%);
+      transition: all 0.3s ease-in-out;
+     }
+     
+     .checkbox-con input[type="checkbox"]::after {
+      content: url("data:image/svg+xml,%3Csvg xmlns='://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 23 23' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.55021 5.84315L17.1568 16.4498L16.4497 17.1569L5.84311 6.55026L6.55021 5.84315Z' fill='%23EA0707' fill-opacity='0.89'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.1567 6.55021L6.55012 17.1568L5.84302 16.4497L16.4496 5.84311L17.1567 6.55021Z' fill='%23EA0707' fill-opacity='0.89'/%3E%3C/svg%3E");
+      position: absolute;
+      top: 0;
+      left: 20px;
+     }
+     
+     .checkbox-con input[type="checkbox"]:checked {
+      border: 2px solid #02c202;
+      background: #e2f1e1;
+     }
+     
+     .checkbox-con input[type="checkbox"]:checked::before {
+      background: rgba(2, 194, 2, 0.5);
+      border: 2px solid #02c202;
+      transform: translate(133%, 13%);
+      transition: all 0.3s ease-in-out;
+     }
+     
+     .checkbox-con input[type="checkbox"]:checked::after {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='13' viewBox='0 0 15 13' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.8185 0.114533C15.0314 0.290403 15.0614 0.605559 14.8855 0.818454L5.00187 12.5L0.113036 6.81663C-0.0618274 6.60291 -0.0303263 6.2879 0.183396 6.11304C0.397119 5.93817 0.71213 5.96967 0.886994 6.18339L5.00187 11L14.1145 0.181573C14.2904 -0.0313222 14.6056 -0.0613371 14.8185 0.114533Z' fill='%2302C202' fill-opacity='0.9'/%3E%3C/svg%3E");
+      position: absolute;
+      top: 5px;
+      left: 5px;
+     }
+     
+     .checkbox-con label {
+      margin-left: 10px;
+      cursor: pointer;
+      user-select: none;
+     }
+     
+  
+  
+  
+     /* input form */
+  
+  
+     .input-style {
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #555;
+      outline: none;
+    }
+    
+    .input-style:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    
+  
+  
+  
+    /* confirm button */
+  
+    .confirmButton {
+      padding: 17px 40px;
+      border-radius: 50px;
+      cursor: pointer;
+      border: 0;
+      background-color: white;
+      box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 15px;
+      transition: all 0.5s ease;
+    }
+    
+  .confirmButton:hover {
+      letter-spacing: 3px;
+      background-color: hsl(261deg 80% 48%);
+      color: hsl(0, 0%, 100%);
+      box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    }
+    
+    .confirmButton:active {
+      letter-spacing: 3px;
+      background-color: hsl(261deg 80% 48%);
+      color: hsl(0, 0%, 100%);
+      box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+      transform: translateY(10px);
+      transition: 100ms;
+    }
+    
+  
+  
+  
+  
+    #transactionBox {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+  }
+  #transactionBox th, #transactionBox td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+  }
+  #transactionBox th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+  }
+  #transactionBox tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+  }
+  #transactionBox tbody tr:nth-child(odd) {
+      background-color: #fff;
+  }
+  #transactionBox tbody tr.credit {
+      background-color: #ffdddd;
+  }
+  #transactionBox tbody tr.debit {
+      background-color: #ddffdd;
+  }
+  
+  
+  
+  .logoutButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 8px;
+    height: 34px;
+    width: 112px;
+    border: none;
+    background: #ff362b34;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .lable {
+    line-height: 20px;
+    font-size: 17px;
+    color: #FF342B;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .logoutButton:hover {
+    background: #ff362b52;
+  }
+  
+  .logoutButton:hover .svg-icon {
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(-360deg);
+    }
+  }

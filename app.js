@@ -63,8 +63,10 @@ if(hour>12){
     hour-=12;
 }
 var dateNow=`${hour} : ${todayDate.getMinutes()} : ${todayDate.getSeconds()}`
+var datetime=` ${todayDate.getDate()}/${month[todayDate.getMonth()]}/${todayDate.getFullYear()}-${hour} : ${todayDate.getMinutes()} : ${todayDate.getSeconds()}`
 document.getElementById('time').innerText=dateNow;
 document.getElementById('zone').innerText=zone;
+return datetime;
 }
 
 
@@ -73,6 +75,24 @@ function shownButton(){
 
 }
 
+
+function delAcc(){
+    var attemptUsername=prompt("Enter your username to delete ACCOUNT!");
+    var attemptPassword=prompt("Enter your password to delete ACCOUNT!");
+
+    if(attemptUsername.trim()===localStorage.getItem('userName') && attemptPassword===localStorage.getItem('userPassword')){
+    var check=prompt("Are you sure you want to delete ACCOUNT?Type \"YES\"")
+if(check==="YES"){
+    localStorage.clear();
+    alert("Account Deleted!")
+    window.location.href="index.html"
+}else{
+    alert("Failed to Delete Account!(Reason#090)")
+}
+}else{
+    alert("Failed to Delete Account!(Reason#093)")
+}
+}
 function logout(){
     localStorage.setItem('status','false');
     window.location.href = "index.html";
