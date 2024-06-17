@@ -29,5 +29,26 @@ var attemptPin=pin1+pin2+pin3+pin4;
         window.location.href = "main.html";
     }
 }
+function dateCal(){
+    month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var zone="am";
+    todayDate=new Date;
+    // document.getElementById('date').innerText=` ${todayDate.getDate()}-${month[todayDate.getMonth()]}-${todayDate.getFullYear()}`;
+    var hour=todayDate.getHours();
+    if(hour>12){
+        var zone="pm";
+        hour-=12;
+    }
 
+    document.getElementById('timeOnCard').innerHTML=`<p>&nbsp;&nbsp;&nbsp;${hour} : ${todayDate.getMinutes()}<p/>`;
+    document.getElementById('dateOnCard').innerText=` ${todayDate.getDate()}-${month[todayDate.getMonth()]}-${todayDate.getFullYear()}`;
+}
+loadData();
+
+function loadData(){
+    dateCal();
+    document.getElementById('CARDHOLDERNAME').innerText=localStorage.getItem('Name');
+    document.getElementById('balanceShow').innerHTML=`<b>Current Balance:</b>${localStorage.getItem('savingAccount')}`
+
+}
 
