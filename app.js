@@ -11,9 +11,11 @@ if(localStorage.getItem('firstTime')=='true'){
 
 function submitModal(){
 var ready=true;
+ console.log(document.getElementById('dob').value)
+ var dob=document.getElementById('dob').value
     var savingsAmountSet=document.getElementById('savingsAmountSet').value.trim()
     var monthlyAmountSet=document.getElementById('monthlyAmountSet').value.trim()
-    if(savingsAmountSet=='' || monthlyAmountSet==''){
+    if(savingsAmountSet=='' || monthlyAmountSet=='' || dob=='' ){
         document.getElementById('modalErr').innerText="Please fill all the fields."
     }else{
         if(document.getElementById('boolPin').checked){
@@ -35,6 +37,7 @@ var ready=true;
         if(ready==true){
         localStorage.setItem('savingAccount',savingsAmountSet);
         localStorage.setItem('monthlyAccount',monthlyAmountSet);
+        localStorage.setItem('dob',dob)
         localStorage.setItem('firstTime','false')
         modal.style.display = "none";
         document.getElementById('content').style.display='block'

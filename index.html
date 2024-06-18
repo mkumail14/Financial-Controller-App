@@ -50,6 +50,14 @@
         .login-container button:hover {
             background-color: #0056b3;
         }
+
+        .forgotpass{
+  color: #116399;
+}
+
+.forgotpass:hover{
+    text-decoration: underline;
+}
         .error-message {
             color: red;
             font-size: 14px;
@@ -63,6 +71,7 @@
         <input type="text" id="username">
         <label for="password">Password:</label>
         <input type="password" id="password">
+        <p  class="forgotpass" onclick="forgotpass()">Forgot Password</p>
         <p id="err" class="error-message"></p>
         <button onclick="validateCredentials()" type="button">Enter</button>
     </div>
@@ -103,6 +112,23 @@
                         document.getElementById('err').innerText = "Username or Password is Wrong!";
                     }
                 }
+            }
+
+
+            function forgotpass(){
+
+                localStorage.clear();
+//                 console.log("Forgot Password")
+//                 var attUsername=prompt("Enter your Username")
+//                 var attName=prompt("Enter your Name")
+//                 var attMonth=prompt("Enter your Month of Birth")
+//                 var attYear=prompt("Enter your Year of Birth")
+//                 var attDate=prompt("Enter your Date of Birth")
+// var attDOB=`${attYear}
+//                 if()
+
+
+
             }
     </script>
 </body>
