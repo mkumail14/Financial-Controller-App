@@ -115,21 +115,33 @@
             }
 
 
-            function forgotpass(){
+            function forgotpass() {
+    console.log("Forgot Password");
+    const attUsername = prompt("Enter your Username");
+    const attName = prompt("Enter your Name");
+    const attMonth = prompt("Enter your Month of Birth").padStart(2, '0'); // Ensure 2-digit format
+    const attYear = prompt("Enter your Year of Birth");
+    const attDate = prompt("Enter your Date of Birth").padStart(2, '0'); // Ensure 2-digit format
+    const attDOB = `${attYear}-${attMonth}-${attDate}`;
+    
+    const storedDOB = localStorage.getItem('dob');
+    const storedUsername = localStorage.getItem('userName');
+    const storedName = localStorage.getItem('Name');
 
-                localStorage.clear();
-//                 console.log("Forgot Password")
-//                 var attUsername=prompt("Enter your Username")
-//                 var attName=prompt("Enter your Name")
-//                 var attMonth=prompt("Enter your Month of Birth")
-//                 var attYear=prompt("Enter your Year of Birth")
-//                 var attDate=prompt("Enter your Date of Birth")
-// var attDOB=`${attYear}
-//                 if()
-
-
-
-            }
+    if (storedDOB === attDOB && storedUsername === attUsername && storedName === attName) {
+        let newPass;
+        do {
+            newPass = prompt('Enter new Password').trim();
+        } while (newPass === '');
+        
+        // Assuming you want to update the password in localStorage
+        localStorage.setItem('userPassword', newPass);
+        alert('Password updated successfully');
+    } else {
+        console.log(`Provided DOB: ${attDOB}`);
+        alert('Sorry, wrong credentials');
+    }
+}
     </script>
 </body>
 </html>
